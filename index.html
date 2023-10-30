@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заказа пиццы</title>
+</head>
+<body>
+    <h1>Заказ пиццы</h1>
+    <form action="process_pizza_order.php" method="post" enctype="multipart/form-data">
+        <label for="name">Имя клиента:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Номер телефона:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label>Размер пиццы:</label>
+        <input type="radio" id="small" name="size" value="small" required>
+        <label for="small">Маленькая</label>
+        <input type="radio" id="medium" name="size" value="medium" required>
+        <label for="medium">Средняя</label>
+        <input type="radio" id="large" name="size" value="large" required>
+        <label for="large">Большая</label><br><br>
+
+        <label>Добавки к пицце:</label>
+        <input type="checkbox" id="pepperoni" name="toppings[]" value="pepperoni">
+        <label for="pepperoni">Пепперони</label>
+        <input type="checkbox" id="mushrooms" name="toppings[]" value="mushrooms">
+        <label for="mushrooms">Грибы</label>
+        <input type="checkbox" id="olives" name="toppings[]" value="olives">
+        <label for="olives">Оливки</label>
+        <input type="checkbox" id="salami" name="toppings[]" value="salami">
+        <label for="salami">Салями</label><br><br>
+
+        <label for="pizza-photo">Фото пиццы:</label>
+        <input type="file" id="pizza-photo" name="pizza_photo" accept="image/*" required><br><br>
+
+        <label for="delivery">Способ доставки:</label>
+        <select id="delivery" name="delivery" required>
+            <option value="pickup">Самовывоз</option>
+            <option value="delivery">Курьерская доставка</option>
+        </select><br><br>
+
+        <button type="submit">Заказать пиццу</button>
+    </form>
+</body>
+</html>
